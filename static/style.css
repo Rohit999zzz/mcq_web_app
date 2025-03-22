@@ -1,43 +1,137 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  flex-direction: column;
+  color: #fff;
 }
 
-h1 {
-  color: #333;
+/* Header Styles */
+header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Form Styles */
 form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
   text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 2px dashed #007bff;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
   margin-bottom: 20px;
 }
 
-button {
-  background-color: #007BFF;
-  color: white;
+.custom-file-upload:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Loading Animation */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* File Upload Feedback */
+#file-name {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Footer Styles */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #007bff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

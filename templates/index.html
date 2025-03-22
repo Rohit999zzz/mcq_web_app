@@ -2,13 +2,60 @@
 <html>
 <head>
     <title>MCQ Generator</title>
-    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
 <body>
-    <h1>Upload a PDF to Generate MCQs</h1>
+    <!-- Header -->
+    <header>
+        <h1>MCQ Generator</h1>
+        <p>Upload a PDF and generate multiple-choice questions instantly!</p>
+    </header>
+
+    <!-- Form -->
     <form action="/generate" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept="application/pdf" required>
+        <label for="file-upload" class="custom-file-upload">
+            Choose PDF File
+        </label>
+        <input id="file-upload" type="file" name="file" accept="application/pdf" required>
+        <div id="file-name"></div>
         <button type="submit">Generate MCQs</button>
+        <div class="loader"></div>
     </form>
+
+    <!-- Footer -->
+    <footer>
+        <p>Created with ❤️ by <a href="#" target="_blank">Your Name</a></p>
+    </footer>
+
+    <script>
+        // JavaScript for file upload feedback and loading animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const fileInput = document.querySelector('input[type="file"]');
+            const fileNameDisplay = document.createElement('div');
+            fileNameDisplay.id = 'file-name';
+            fileInput.parentElement.insertBefore(fileNameDisplay, fileInput.nextSibling);
+
+            const submitButton = document.querySelector('button[type="submit"]');
+            const loader = document.createElement('div');
+            loader.className = 'loader';
+            submitButton.parentElement.appendChild(loader);
+
+            // Show file name when a file is selected
+            fileInput.addEventListener('change', function () {
+                if (fileInput.files.length > 0) {
+                    fileNameDisplay.textContent = `Selected file: ${fileInput.files[0].name}`;
+                } else {
+                    fileNameDisplay.textContent = '';
+                }
+            });
+
+            // Show loader when form is submitted
+            document.querySelector('form').addEventListener('submit', function () {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Generating...';
+                loader.style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
