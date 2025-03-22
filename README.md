@@ -1,3 +1,8 @@
+Let's update the `README.md` file to add a "Contributors" section at the end.
+
+Here is the updated content:
+
+```markdown
 # MCQ Generator Web App
 
 This project is a **Flask-based web application** that allows users to upload a **PDF file**, extract text from it, and generate **multiple-choice questions (MCQs)** using an **NLP model hosted on Google Colab**.
@@ -58,6 +63,10 @@ The application communicates with a **Google Colab backend** for question genera
 4. The Colab backend processes the text and generates **MCQs**.
 5. The MCQs are displayed on a results page.
 
+## Contributors
+- **Rohit999zzz** - [GitHub Profile](https://github.com/Rohit999zzz)
 
 ---
 🚀 **Developed with Flask & NLP Models** 🚀
+```
+
