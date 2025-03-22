@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MCQ Generator</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+    <h1>Upload a PDF to Generate MCQs</h1>
+    <form action="/generate" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="application/pdf" required>
+        <button type="submit">Generate MCQs</button>
+    </form>
+</body>
+</html>

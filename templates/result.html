@@ -1,0 +1,15 @@
+<!-- result.html -->
+<h1>Generated MCQs</h1>
+<ul>
+    {% for question in questions %}
+        <li>
+            <p>{{ question['question'] }}</p>
+            <ul>
+                {% for option in question['options'] %}
+                    <li>{{ option }}</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Correct answer is:</strong> {{ question['correct_answer'] }}</p>
+        </li>
+    {% endfor %}
+</ul>
